@@ -10,13 +10,9 @@
 ;; sexp-diff to highlight to diff.
 
 (define-check (check-sexp-equal? a b)
-  (with-check-info*
-      (list (make-check-message "see sexp diff below. #:new = actual"))
-    (lambda ()
-      (let ((result (equal? a b)))
-        (or result
-            (fail-check (format "sexp-diff:~n~n~a"
-                                (pretty-format (sexp-diff b a)))))))))
+  (or (equal? a b)
+      (fail-check (format "sexp-diff (#:new = actual, #:old = expected):~n~n~a"
+                          (pretty-format (sexp-diff b a))))))
 
 (module+ test
   (let ([a '(a (foo bar foo bar b c d e f (g h i j k l))

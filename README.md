@@ -22,12 +22,13 @@ With `check-sexp-equal?` you'd get:
 
 ```
 FAILURE
-message:    "see sexp diff below. #:new = actual"
 name:       check-sexp-equal?
-location:   (#<path:/Users/ryan/Desktop/racketcola/check-sexp-equal.rkt> 27 4 858 23)
+location:   (#<path:.../check-sexp-equal.rkt> 29 4 999 23)
 expression: (check-sexp-equal? a b)
 params:     ((a (foo bar foo bar b c d e f (g h i j k l)) (m n o p q (r s t u v w x y z))) (a (foo bar foo bar b c d e f (g h i j k l)) (m n o p q (r s t u v 0 x y z))))
-sexp-diff:
+
+sexp-diff (#:new = actual, #:old = expected):
+
 '((a
    (foo bar foo bar b c d e f (g h i j k l))
    (m n o p q (r s t u v #:new w #:old 0 x y z))))
