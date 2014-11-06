@@ -4,4 +4,6 @@
 
 (define collection "check-sexp-equal")
 
-(define deps '(("sexp-diff" #:version "0.1")))
+(define deps '(("sexp-diff" #:version "0.1")
+               "base"
+               "rackunit-lib"))
