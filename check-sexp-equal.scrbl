@@ -5,9 +5,9 @@
           (for-label racket/base racket/dict syntax/id-table racket/contract
                      unstable/list))
 
-@defmodule[check-sexp-equal]
-
 @title{check-sexp-equal}
+
+@defmodule[check-sexp-equal]
 
 @racket[check-equal?] doesn't even @racket[pretty-print] the sexprs on
 failure, which can be very long and hard to compare. Anyway let's do
