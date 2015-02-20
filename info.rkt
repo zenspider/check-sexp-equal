@@ -7,3 +7,5 @@
 (define deps '(("sexp-diff" #:version "0.1")
                "base"
                "rackunit-lib"))
+
+(define scribblings '(("check-sexp-equal.scrbl" ())))
