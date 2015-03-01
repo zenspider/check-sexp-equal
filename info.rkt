@@ -8,4 +8,6 @@
                "base"
                "rackunit-lib"))
 
+(define build-deps '(("scribble-lib")))
+
 (define scribblings '(("check-sexp-equal.scrbl" ())))
