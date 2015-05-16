@@ -8,6 +8,7 @@
                "base"
                "rackunit-lib"))
 
-(define build-deps '("scribble-lib" "unstable-list-lib"))
+(define build-deps '("racket-doc"
+                     "scribble-lib" "unstable-list-lib"))
 
 (define scribblings '(("check-sexp-equal.scrbl" ())))
