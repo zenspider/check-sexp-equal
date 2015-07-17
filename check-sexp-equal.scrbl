@@ -2,8 +2,7 @@
 
 @(require (for-label racket "main.rkt"))
 @(require scribble/base scribble/manual scribble/eval
-          (for-label racket/base racket/dict syntax/id-table racket/contract
-                     unstable/list))
+          (for-label racket/base racket/dict syntax/id-table racket/contract))
 
 @title{check-sexp-equal}
 
