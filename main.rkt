@@ -37,8 +37,9 @@
                     #f))
   (unless failure (fail-check "No failure raised"))
   (define info-hash (check-stack->hash (exn:test:check-stack failure)))
-  ;; (check-equal? (exn-message failure) message TODO: currently broken?
-  ;;               "failed to match exn message")
+  (when message
+    (check-equal? (exn-message failure) message
+                 "failed to match exn message"))
   (for ([(k v) (in-hash info)])
     (check-equal? (hash-ref info-hash k (not v)) v)))
 
@@ -52,7 +53,7 @@
              (m n o p q (r s t u v #:new w #:old 0 x y z)))])
 
     (check-exn-info? (thunk (check-equal? a b))          ; not terribly useful
-                     "Check failure"
+                     #f
                      (hash 'actual (pretty-info a)
                            'expected (pretty-info b)))
 
@@ -67,7 +68,7 @@ DONE
                      (hash))
 
     (check-exn-info? (thunk (check-sexp-equal? a b))     ; best?
-                     "Check failure"
+                     #f
                      (hash 'actual a
                            'expected b
                            'sexp-diff c))
